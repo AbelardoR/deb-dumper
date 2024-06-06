@@ -40,7 +40,6 @@ function debug_dumper_enqueue_css() {
 add_action( 'admin_enqueue_scripts', 'debug_dumper_enqueue_js' );
 function debug_dumper_enqueue_js() {
     wp_enqueue_script('debug-dumper-js', plugin_dir_url( __FILE__ ). 'assets/debug-dumper.js', array('jquery'), '1.0', true );
-    // wp_enqueue_script('debug-dumper-js', get_template_directory_uri() . 'assets/debug-dumper.js', array('jquery'), '1.0', true );
 }
 
 // Activate debug mode when the plugin is installed
