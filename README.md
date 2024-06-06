@@ -53,8 +53,7 @@ The following tools were used in this project:
 ## Starting ##
 
 ```bash
-# Clone this project
-git clone https://github.com/AbelardoR/template-info
+- Copy this repository
 
 - Upload the project folder to the "/wp-content/plugins/ directory"
 
