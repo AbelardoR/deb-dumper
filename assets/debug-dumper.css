@@ -1,0 +1,68 @@
+.dump-box {
+    background-color: black;
+    border: 1px solid #ddd;
+    box-shadow: -4px 4px 16px 0px grey;
+    padding: 10px;
+    overflow: auto;
+    position: fixed;
+    top: 5%;
+    right: 0;
+    height: 90vh;
+    width: fit-content;
+    z-index: 100;
+}
+
+.dump {
+    background-color: black;
+    font-family: monospace;
+    font-size: 12px;
+    white-space: pre;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ffbf00;
+    color: lightgray;
+}
+
+.dump::before {
+    content: "Dumper: ";
+    font-weight: bold;
+    color: #666;
+}
+
+.dump span {
+    color: darkgray;
+}
+
+.dump .string {
+    color: lightgray;
+}
+
+.dump .number {
+    color: purple;
+}
+
+.dump .boolean {
+    color: orange;
+}
+
+.dump .null {
+    color: red;
+}
+
+.dump .array {
+    color: grey;
+}
+
+.dump .object {
+    color: darkgreen;
+}
+
+.dump-alert {
+    position: absolute;
+    top: -100px;
+    left: 50vw;
+    width: 100px;
+    height: 100px;
+    background-color: lightskyblue;
+    border: 1px solid #ffbf00;
+}
