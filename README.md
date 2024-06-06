@@ -68,10 +68,10 @@ dump($myObject, true); // outputs the contents of $myObject using print_r()
 ```
 ## License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from GNU Version 3. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/AbelardoR" target="_blank">AbelardoR</a>
+Made with :heart: by <a href="https://github.com/AbelardoR" target="_blank">Abelardo R.</a>
 
 &#xa0;
 
