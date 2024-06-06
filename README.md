@@ -14,7 +14,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/AbelardoR/deb-dumper?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/AbelardoR/deb-dumper?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/AbelardoR/DEB-DUMPER?color=56BEB8">
 
 </div>
 
