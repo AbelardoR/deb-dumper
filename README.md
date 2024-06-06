@@ -47,6 +47,8 @@ The following tools were used in this project:
 - [vscode](https://code.visualstudio.com/)
 - [WordPress dev](https://developer.wordpress.org/)
 - [PHP](https://www.php.net/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Starting ##
 
