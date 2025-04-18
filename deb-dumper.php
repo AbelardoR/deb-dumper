@@ -46,9 +46,12 @@ function debug_dumper_enqueue_js() {
 register_activation_hook(__FILE__, 'debug_dumper_activate');
 
 function debug_dumper_activate() {
-    // Define debug constants
-    define('WP_DEBUG', true);
-    define('WP_DEBUG_LOG', true);
-    define('WP_DEBUG_DISPLAY', true);
-    @ini_set('display_errors', 1);
+    // Check if debug mode is not enabled
+    if (!WP_DEBUG) {
+        // Define debug constants
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', true);
+        @ini_set('display_errors', 1);
+    }
 }
