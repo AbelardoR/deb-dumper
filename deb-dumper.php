@@ -42,16 +42,28 @@ function debug_dumper_enqueue_js() {
     wp_enqueue_script('debug-dumper-js', plugin_dir_url( __FILE__ ). 'assets/debug-dumper.js', array('jquery'), '1.0', true );
 }
 
-// Activate debug mode when the plugin is installed
+/**
+ * Activates WordPress debug mode and displays errors.
+ */
 register_activation_hook(__FILE__, 'debug_dumper_activate');
 
 function debug_dumper_activate() {
-    // Check if debug mode is not enabled
-    if (!WP_DEBUG) {
-        // Define debug constants
-        define('WP_DEBUG', true);
-        define('WP_DEBUG_LOG', true);
-        define('WP_DEBUG_DISPLAY', true);
-        @ini_set('display_errors', 1);
+    // Define the WordPress debug constants to activate
+    $debugConstants = [
+        'WP_DEBUG',
+        'WP_DEBUG_LOG',
+        'WP_DEBUG_DISPLAY'
+    ];
+
+    // Activate each debug constant if it's not already set to true
+    foreach ($debugConstants as $constant) {
+        if (!defined($constant) || constant($constant) === false) {
+            define($constant, true);
+        }
+    }
+
+    // Enable display of errors if it's currently disabled
+    if (ini_get('display_errors') === '0') {
+        ini_set('display_errors', '1');
     }
 }
