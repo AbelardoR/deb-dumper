@@ -51,21 +51,16 @@ The following tools were used in this project:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Starting ##
-
-```bash
 - Copy this repository
-
 - Upload the project folder to the "/wp-content/plugins/ directory"
-
 - Go to "Plugins" menu in WordPress
-
 - Activate the Deb Dumper Plugin 
-
-```
+- Go settings tab and search `Deb Dumper`
+- Active/Deactive plugin settings and use.
 ## Example usage ##
 ```php
 dump($myArray); // outputs the contents of $myArray in a formatted way
-dump($myObject, true); // outputs the contents of $myObject using print_r()
+dump_print($myObject); // outputs the contents of $myObject using print_r()
 ```
 ## License ##
 

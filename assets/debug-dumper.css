@@ -1,44 +1,87 @@
 .dump-box {
-    background-color: black;
-    border: 1px solid #ddd;
-    box-shadow: -4px 4px 16px 0px grey;
+    --db-dark:#232E33;
+    --db-light: #d3d3d3;
+    --db-accent: #ffbf00;
+    --db-mute: #666666;
+    --sb-size: 4px;
+    background-color: var(--db-dark);
+    border: 1px solid var(--db-light);
+    box-shadow: -4px 4px 16px 0px var(--db-light);
     padding: 10px;
     overflow: auto;
     position: fixed;
     top: 5%;
     right: 0;
     height: 90vh;
-    width: clamp(200px, 200px + 50vw, 80vw);
+    width: clamp(200px, 12vw + 200px, 60vw);
     z-index: 100;
+    transition: all .3s linear;
+    visibility: visible;
+}
+
+.dump-box::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.dump-box::-webkit-scrollbar-track {
+  background: var(--db-dark);
+  border-radius: 4px;
+}
+
+.dump-box::-webkit-scrollbar-thumb {
+  background: var(--db-accent);
+  border-radius: 4px;
+  border: 1px solid var(--db-dark);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .dump-box {
+      scrollbar-color: var(--db-accent)
+                     var(--db-dark);
+  }
+}
+
+.dump-box.hide {
+    height: 0;
+    width: 0;
+    transition: all .3s ease-out;
+    visibility: collapse;
 }
 
 .dump {
-    background-color: black;
+    background-color: var(--db-dark);
     font-family: monospace;
     font-size: 12px;
     white-space: pre;
     margin-bottom: 10px;
-    display: block;
-    border: 1px solid #ffbf00;
-    color: lightgray;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--db-accent);
+    color: var(--db-light);
 }
 
 .dump::before {
     content: "Dumper: ";
     font-weight: bold;
-    color: #666;
+    color: var(--db-mute);
 }
 
 .dump span {
-    color: darkgray;
+    color: var(--db-mute);
 }
 
 .dump .string {
-    color: lightgray;
+    color: var(--db-light);
 }
 
+.dump .integer,
 .dump .number {
-    color: purple;
+    color: blue;
+}
+
+.dump .double,
+.dump .float {
+    color: darkturquoise;
 }
 
 .dump .boolean {
@@ -46,11 +89,11 @@
 }
 
 .dump .null {
-    color: red;
+    color: darkviolet;
 }
 
 .dump .array {
-    color: grey;
+    color: lightyellow;
 }
 
 .dump .object {
@@ -59,24 +102,31 @@
 
 .dump-alert {
     position: absolute;
-    bottom: 32px;
-    left: 50vw;
+    bottom: 8px;
+    right: 50%;
     z-index: 101;
     width: 200px;
     height: auto;
-    background-color: #87cefa8f;
-    border: 1px solid #ffbf00;
+    background-color: wheat;
+    border: 1px solid var(--db-accent);
     font-weight: bold;
     text-align: center;
-    padding: 10px;  
+    padding: 10px;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-110px);
+    transform: translateY(-100px) translateX(50%);
     transition: all .3s ease-out;
 }
 .dump-alert.show {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(50%);
     transition: all .3s ease-in;
+}
+
+.dump-button {
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    z-index: 101;
 }

@@ -1,0 +1,48 @@
+.dd-box {
+    --gap:20px;
+    position: relative;
+    height: clamp(500px,60vh + 10vw,100vh);
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: var(--gap);
+}
+.dd-box-wrapp {
+    flex: 0 0 auto;
+    padding: 12px;
+    width: calc(50% - (4*var(--gap)));
+    height: calc(100% - (4* var(--gap)));
+    background-color: lightgray;
+    border-radius: 6px;
+}
+.dd-box-wrapp:nth-child(even) {
+    background-color: lightblue;
+}
+.dd-box-header {
+    padding: 20px;
+    text-align: center;
+}
+.dd-form-fields {
+    width: 100%;
+    height: calc(100% - var(--gap));
+    display: flex;
+    flex-direction: column;
+}
+.dd-input-checkbox {
+    position: relative;
+}
+.dd-input-checkbox label {
+    margin-right: 12px;
+}
+
+.dd-form-fields p.submit {
+    text-align: left;
+    max-width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+}
